@@ -1,0 +1,48 @@
+<br/>
+
+<form [formGroup]="formLogin" (ngSubmit)="submitForm()">
+    <div class="content">
+        <div id="login">
+            <h1>Login</h1> 
+       
+            <p>
+                <label>Email:</label>
+                <input type="text" formControlName="email" placeholder="SeuEmail@Provedor.com"> <br>
+            </p>
+
+            <div *ngIf="formLogin.controls['email'].touched">   <!-- se email foi tocado -->
+                <small *ngIf="formLogin.controls['email'].hasError('required')" style="color: red;">O email é Obrigatório</small>
+                <small *ngIf="formLogin.controls['email'].hasError('email')" style="color: red;">Formato de email inválido</small>
+            </div>
+
+            <p>
+                <label>Password:</label>
+                <input type="password" formControlName="password" placeholder="SuaSenhaAqui"> <br>
+            </p>
+
+            <div *ngIf="formLogin.controls['password'].touched">   <!-- se password foi tocado -->
+                <small *ngIf="formLogin.controls['password'].hasError('required')" style="color: red;">A Senha é Obrigatória</small>
+                <small *ngIf="formLogin.controls['password'].hasError('minlength')" style="color: red;">A senha precisa ter no mínimo 6 caractéres</small>
+            </div>
+
+            <p> 
+                <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
+                <label for="manterlogado"> Manter-me logado</label>
+            </p>
+
+            <p> 
+                <input type="submit" value="Logar" />
+            </p>
+
+            <p class="link">
+                <a  routerLink="/cadastro">Ainda não tem cadastro? Clique Aqui!</a>
+            </p>
+
+        </div>
+    </div>
+
+</form>   <!-- formulario agora reativo -->
+
+<div class="content2">
+    <button class="botaoEnviar" (click)="logarComGoogleCount()" style="background-color:blue; color: white">Logar com Conta Google</button> <br />
+</div>

@@ -1,0 +1,127 @@
+<hr>
+<h1>Lista de Carros:</h1>
+<hr> <br>
+
+<body>
+  <main class="cards">
+    <table *ngFor= "let produto of lista_produtos">
+      <tr>
+        <td>
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title> {{produto.marca}}</mat-card-title>
+              <mat-card-subtitle>{{produto.modelo}}</mat-card-subtitle>
+            </mat-card-header>
+            <div class="icon">
+              <img style="width: 200px; background-size: cover;"  src="{{produto.downloadURL}}">
+            </div>
+            <mat-card-content>
+              <br>
+              <p>
+                Versão: {{produto.versao}} <br>
+                Ano: {{produto.ano}} <br>
+                Cor: {{produto.cores}} <br>
+                Combustível: {{produto.combustivel}} <br>
+                Câmbio: {{produto.cambio}} <br>
+                Blindagem: {{produto.blindagem}} <br>
+                Quilometragem: {{produto.quilometragem}} <br>
+                Preço: {{produto.preco}}<br>
+              </p>
+    
+            </mat-card-content>
+            <mat-card-actions>
+              <button (click)="editar(produto)" style="background-color:blue; color: white">Editar</button>
+              <button (click)="excluir(produto)" style="background-color:blue; color: white">Excluir</button>
+            </mat-card-actions>
+          </mat-card>  
+        </td>
+      </tr>
+    </table>
+  
+  </main>
+
+  <br>
+  <hr> <br>
+  <button class="botaoEnviar" (click)="irParaCriarProduto()">Criar Carro</button>
+</body>
+
+<!--
+<br>
+<hr> <br>
+<button (click)="irParaCriarProduto()" style="background-color:blue; color: white">Criar Carro</button> -->
+
+
+<!--
+<table *ngFor= "let produto of lista_produtos">
+  <tr>
+    <td>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title> {{produto.marca}}</mat-card-title>
+          <mat-card-subtitle>{{produto.modelo}}</mat-card-subtitle>
+        </mat-card-header>
+        <img style="width: 200px; background-size: cover;"  src="{{produto.downloadURL}}">
+        <mat-card-content>
+          <p>
+            Versão: {{produto.versao}} <br>
+            Ano: {{produto.ano}} <br>
+            Cor: {{produto.cores}} <br>
+            Combustível: {{produto.combustivel}} <br>
+            Câmbio: {{produto.cambio}} <br>
+            Blindagem: {{produto.blindagem}} <br>
+            Quilometragem: {{produto.quilometragem}} <br>
+            Preço: {{produto.preco}}<br>
+          </p>
+
+        </mat-card-content>
+        <mat-card-actions>
+          <button (click)="editar(produto)" style="background-color:blue; color: white">Editar</button>
+          <button (click)="excluir(produto)" style="background-color:blue; color: white">Excluir</button>
+        </mat-card-actions>
+      </mat-card>  
+    </td>
+  </tr>
+</table>
+-->
+
+<!-- Testando cards hehe-->
+<!--
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+<br>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title> Volkswagen</mat-card-title>
+    <mat-card-subtitle>Golf</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://garagem360.com.br/wp-content/uploads/2019/03/vw_golf_gti.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      Versão: Tsi <br>
+      Ano: 2018 <br>
+      Combustivel: Gasolina
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Editar</button>
+    <button mat-button>Excluir</button>
+  </mat-card-actions>
+</mat-card>
+-->

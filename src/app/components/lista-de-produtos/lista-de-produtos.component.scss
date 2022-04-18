@@ -1,0 +1,64 @@
+h1{
+    font-size: 48px;
+    color: #066a75;
+    padding: 10px 0;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 1px;
+}
+
+//dimensões do card
+.example-card {
+    width: 200px;
+    height: 430px;
+    background-color:grey;
+}
+
+//.example-header-image {
+//    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+//    background-size: cover;
+//}
+
+body {
+    height: 100vh;
+    width: 100%;
+    //display: flex;
+    //justify-content:center;
+}
+
+main.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+//tirar
+main.cards section.example-card {
+    display: flex;
+    flex-direction: column;
+}
+
+//tirar
+//tamanho imagem dentro do card
+.icon {
+    width: 32%;
+    height: 32%;
+}
+
+//tamanho do espaço destinado para imagens
+main.cards section.example-card img {
+    width: 100%;
+}
+
+.botaoEnviar{
+    position: absolute;
+    left: 45%;
+    background-color:blue;
+    color: white;
+    width: 200px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 18px;
+}

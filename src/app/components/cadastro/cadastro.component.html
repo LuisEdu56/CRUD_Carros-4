@@ -1,0 +1,46 @@
+<br/>
+
+<form [formGroup]="formcadastro" (ngSubmit)="submitForm()">
+    <div class="content">
+        <div id="login">
+            <h1>Cadastrar Usuario</h1> 
+       
+            <p>
+                <label>Email:</label>
+                <input type="text" formControlName="email" placeholder="SeuEmail@Provedor.com"> <br>
+            </p>
+
+            <div *ngIf="formcadastro.controls['email'].touched">   <!-- se email foi tocado -->
+                <small *ngIf="formcadastro.controls['email'].hasError('required')" style="color: red;">O email é Obrigatório</small>
+                <small *ngIf="formcadastro.controls['email'].hasError('email')" style="color: red;">Formato de email inválido</small>
+            </div>
+
+            <p>
+                <label>Password:</label>
+                <input type="password" formControlName="password" placeholder="SuaSenhaAqui"> <br>
+            </p>
+
+            <div *ngIf="formcadastro.controls['password'].touched">   <!-- se password foi tocado -->
+                <small *ngIf="formcadastro.controls['password'].hasError('required')" style="color: red;">A Senha é Obrigatória</small>
+                <small *ngIf="formcadastro.controls['password'].hasError('minlength')" style="color: red;">A senha precisa ter no mínimo 6 caractéres</small>
+            </div>
+
+            <p>
+                <label>Confirm Password:</label>
+                <input type="password" formControlName="confirmPassword" placeholder="SuaSenhaAquiNovamente"> <br>
+            </p>
+            
+            <div *ngIf="formcadastro.controls['confirmPassword'].touched">   <!-- se password foi tocado -->
+                <small *ngIf="formcadastro.controls['confirmPassword'].hasError('required')" style="color: red;">A Senha é Obrigatória</small>
+                <small *ngIf="formcadastro.controls['confirmPassword'].hasError('minlength')" style="color: red;">A senha precisa ter no mínimo 6 caractéres</small>
+                <small *ngIf="formcadastro.controls['confirmPassword'].value != formcadastro.controls['password'].value" style="color: red;">As senhas não conferem</small>   
+            </div>
+
+            <p> 
+                <input type="submit" value="Cadastrar" />
+            </p>
+
+        </div>
+    </div>
+
+</form>   <!-- formulario agora reativo -->
